@@ -30,8 +30,7 @@ jobs:
         pip install pytest coverage
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install Google Chrome 
-      run: |
-        sudo apt-get install -y chromium-browser
+      uses: nanasess/setup-chromedriver@v1.1.0
     - name: Test with pytest
       run: |
         coverage run --branch -m pytest
