@@ -59,7 +59,5 @@ jobs:
       shell: bash
     - name: Test with pytest
       run: |
-        if [ -f ${{ inputs.app }} ]; then python ${{ inputs.app }} & fi
-        if [ -f ${{ inputs.api }} ]; then python ${{ inputs.api }} & fi
         coverage run --branch -m pytest
         coverage report -m --fail-under=100 
